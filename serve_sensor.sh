@@ -11,7 +11,7 @@ while true; do
     echo "<h1>Homelab Temp Sensor</h1>"
 
     if [ -f /tmp/homelab-temp-sensor.json ]; then
-      cat /tmp/homelab-temp-sensor.json | jq -r '"<p>Temperature: \(.temperature) °C</p><p>Humidity: \(.humidity)%</p>"'
+      cat /tmp/homelab-temp-sensor.json | jq -r '"<p>Temperature: \(.temperature) °C</p><p>Humidity: \(.humidity)%</p><p>Captured at: \(.timestamp)</p>"'
     else
       echo "<p>No sensor data available</p>"
     fi
